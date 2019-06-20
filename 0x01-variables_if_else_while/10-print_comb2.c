@@ -10,10 +10,11 @@ int main(void)
 {
 	int num;
 
-	for (num = 48 ; (num - 48) / 10 == 0 ; num++)
+	for (num = 48; (num - 48) / 10 == 0; num++)
 	{
 		int aux;
-		for (aux = 48 ; (aux - 48) / 10 == 0 ; aux++)
+
+		for (aux = 48; (aux - 48) / 10 == 0; aux++)
 		{
 			putchar(num);
 			putchar(aux);
@@ -22,6 +23,6 @@ int main(void)
 		}
 	}
 	putchar('\n');
-	
+
 	return (0);
 }
