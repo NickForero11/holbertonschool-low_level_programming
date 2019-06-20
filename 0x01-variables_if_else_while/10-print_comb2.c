@@ -18,8 +18,11 @@ int main(void)
 		{
 			putchar(num);
 			putchar(aux);
-			if (aux != 58)
+			if (aux != 57 && num != 58)
+			{
+				putchar(',');
 				putchar(' ');
+			}
 		}
 	}
 	putchar('\n');
