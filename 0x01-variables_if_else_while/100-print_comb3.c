@@ -15,22 +15,22 @@ int main(void)
 	aux  = 49;
 	copia = aux;
 
-        for (num = 48; (num - 48) / 10 == 0; num++)
-        {
-                for ( ; (aux - 48) / 10 == 0; aux++)
-                {
-                        putchar(num);
-                        putchar(aux);
-                        if (!(aux == 57 && num == 56))
-                        {
+	for (num = 48; (num - 48) / 10 == 0; num++)
+	{
+		for ( ; (aux - 48) / 10 == 0; aux++)
+		{
+			putchar(num);
+			putchar(aux);
+			if (!(aux == 57 && num == 56))
+			{
 				putchar(',');
-                                putchar(' ');
-                        }
-                }
+				putchar(' ');
+			}
+		}
 		aux = copia + 1;
 		copia = aux;
-        }
-        putchar('\n');
+	}
+	putchar('\n');
 
 	return (0);
 }
