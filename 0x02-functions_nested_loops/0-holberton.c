@@ -9,10 +9,9 @@
 int main(void)
 {
 	char msg[] = "Holberton";
-	int size_msg = sizeof(msg) / sizeof(char);
 	int i;
 
-	for (i = 0; i < size_msg ; i++)
+	for (i = 0; i < 9 ; i++)
 	{
 		_putchar(msg[i]);
 	}
