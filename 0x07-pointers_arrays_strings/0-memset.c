@@ -3,7 +3,7 @@
  * _memset - Fills the first n bytes of the memory area pointed to by s
  *			 with the constant byte b.
  *
- * @s: the pointer to the memory area that will be procesed.
+ * @s: the pointer to the memory area that will be processed.
  *
  * @b: the constant byte that will fill the s memory area.
  *
