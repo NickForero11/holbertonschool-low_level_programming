@@ -20,7 +20,13 @@ char *_strchr(char *s, char c)
 		s++;
 	}
 
-	response = s;
+	if (*s == c)
+	{
+		response = s;
+	} else
+	{
+		response = '\0';
+	}
 
 	return (response);
 }

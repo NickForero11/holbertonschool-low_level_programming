@@ -12,20 +12,18 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	char *response;
+	int i;
+	int response;
 
-	while (*s != '\0')
+	for (i = 0; *(s + i) != '\0'; i++)
 	{
-		response = contains(accept, *s);
-		if (*response != '\0')
+		response = contains(accept, *(s + i));
+		if (response == 1)
 		{
-			response = s;
-			break;
+			return (s + i);
 		}
-		s++;
 	}
-
-	return (response);
+	return ('\0');
 }
 
 /**
@@ -39,19 +37,17 @@ char *_strpbrk(char *s, char *accept)
  *a NULL pointer if not.
  *
 */
-char *contains(char *string, char ch)
+int contains(char *string, char ch)
 {
 	unsigned int i;
-	char *response;
 
 	for (i = 0; *(string + i) != '\0'; i++)
 	{
 		if (*(string + i) == ch)
 		{
-			break;
+			return (1);
 		}
 	}
-	response = string + i;
 
-	return (response);
+	return (0);
 }
