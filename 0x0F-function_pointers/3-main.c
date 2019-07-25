@@ -50,5 +50,9 @@ int main(int argc, char const *argv[])
 
 	printf("%d\n", f(*num1, *num2));
 
+	free(num1);
+	free(num2);
+	free(operator);
+
 	return (0);
 }
