@@ -40,7 +40,9 @@ int main(int argc, char const *argv[])
 		exit(100);
 	}
 
-	int (*f)(int a, int b) = get_op_func(operator);
+	int (*f)(int a, int b);
+
+	f = get_op_func(operator);
 
 	if (f == NULL)
 	{
