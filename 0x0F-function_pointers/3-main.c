@@ -17,15 +17,16 @@
 
 int main(int argc, char const *argv[])
 {
+	int *num1;
+	int *num2;
+	char *operator;
+	int (*f)(int a, int b);
+
 	if (argc < 4)
 	{
 		printf("%s\n", "Error");
 		exit(98);
 	}
-
-	int *num1;
-	int *num2;
-	char *operator;
 
 	operator = malloc(sizeof(char));
 	operator[0] = *argv[2];
@@ -40,7 +41,6 @@ int main(int argc, char const *argv[])
 		exit(100);
 	}
 
-	int (*f)(int a, int b);
 
 	f = get_op_func(operator);
 
