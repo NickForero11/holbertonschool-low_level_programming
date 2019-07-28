@@ -26,12 +26,13 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		{
 			string = va_arg(parameters, char*);
 
-			if (i == 0 || separator == NULL)
+			if (i == 0)
 			{
-				printf("%s", string);
+				printf("%s", string == NULL ? "(nil)" : string);
 			} else
 			{
-				printf("%s%s", separator, string == NULL ? "(nil)" : string);
+				printf("%s%s", separator == NULL ? "(nil)" : separator,
+				string == NULL ? "(nil)" : string);
 			}
 		}
 
