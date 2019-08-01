@@ -12,6 +12,8 @@ size_t print_list(const list_t *h)
 {
 	size_t count;
 	const list_t *iterator;
+	int len;
+	char *string;
 
 	count = 0;
 	iterator = h;
@@ -19,8 +21,6 @@ size_t print_list(const list_t *h)
 	while (iterator)
 	{
 		count++;
-		int len;
-		char *string;
 
 		len = iterator->str ? iterator->len : 0;
 		string = iterator->str ? iterator->str : "(nil)";
