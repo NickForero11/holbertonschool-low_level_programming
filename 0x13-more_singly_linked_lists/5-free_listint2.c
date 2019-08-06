@@ -16,13 +16,15 @@ void free_listint2(listint_t **head)
 
 	iterator = *head;
 
-
-	while (iterator)
+	if (head)
 	{
-		future = iterator->next;
-		free(iterator);
-		iterator = future;
+		while (iterator)
+		{
+			future = iterator->next;
+			free(iterator);
+			iterator = future;
+		}
+		*head = NULL;
+		head = NULL;
 	}
-	*head = NULL;
-	head = NULL;
 }
