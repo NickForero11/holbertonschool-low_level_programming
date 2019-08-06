@@ -16,7 +16,6 @@ void free_listint2(listint_t **head)
 
 	iterator = *head;
 
-	*head = NULL;
 
 	while (iterator)
 	{
@@ -24,5 +23,6 @@ void free_listint2(listint_t **head)
 		free(iterator);
 		iterator = future;
 	}
+	*head = NULL;
 	head = NULL;
 }
