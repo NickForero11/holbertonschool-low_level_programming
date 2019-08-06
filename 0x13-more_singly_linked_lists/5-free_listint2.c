@@ -14,10 +14,9 @@ void free_listint2(listint_t **head)
 	listint_t *iterator;
 	listint_t *future;
 
-	iterator = *head;
-
-	if (head)
+	if (head && *head)
 	{
+		iterator = *head;
 		while (iterator)
 		{
 			future = iterator->next;
