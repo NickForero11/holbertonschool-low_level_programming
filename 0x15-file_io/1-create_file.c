@@ -5,7 +5,7 @@
  *
  *@filename: is the string of the path to the file that will be printed.
  *
- *@text_content: is the number of letters it should read and print.
+ *@text_content: is a NULL terminated string to write to the file.
  *
  * Return: 1 on success, -1 on failure.
  */
