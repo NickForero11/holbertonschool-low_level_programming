@@ -40,7 +40,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			*h = new;
 			return (new);
 		}
-
 		for (i = 0; i < idx - 1; i++)
 		{
 			if (iterator->next == NULL)
@@ -48,11 +47,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 				free(new);
 				return (NULL);
 			}
-
 			iterator = iterator->next;
 		}
-		single_connector(new, iterator->next);
+		if (iterator->next != NULL)
+		{
+			single_connector(new, iterator->next);
+		}
 		single_connector(iterator, new);
-
 		return (new);
 }
