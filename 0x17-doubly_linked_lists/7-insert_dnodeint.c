@@ -36,7 +36,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 		if (idx == 0)
 		{
-			new->next = *(h), *h = new;
+			single_connector(new, *h);
+			*h = new;
 			return (new);
 		}
 
@@ -50,7 +51,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 			iterator = iterator->next;
 		}
-
 		single_connector(new, iterator->next);
 		single_connector(iterator, new);
 
