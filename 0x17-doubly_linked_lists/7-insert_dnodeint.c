@@ -15,8 +15,7 @@
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-		dlistint_t *iterator;
-		dlistint_t *new;
+		dlistint_t *iterator, *new;
 		unsigned int i;
 
 		if (h == NULL)
@@ -31,12 +30,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		{
 			return (NULL);
 		}
-
 		new->n = n;
-
 		if (idx == 0)
 		{
-			single_connector(new, *h);
+			if (*h)
+			{
+				single_connector(new, *h);
+			}
 			*h = new;
 			return (new);
 		}
