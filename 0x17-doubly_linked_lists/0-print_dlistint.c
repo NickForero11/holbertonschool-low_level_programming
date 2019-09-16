@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * print_list - Prints all the elements of a dlistint_t list.
+ * print_dlistint - Prints all the elements of a dlistint_t list.
  *
  * @h: the const pointer to the list (it means the HEAD node).
  *
