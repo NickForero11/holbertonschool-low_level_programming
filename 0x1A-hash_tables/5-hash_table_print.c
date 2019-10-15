@@ -17,6 +17,8 @@ void hash_table_print(const hash_table_t *ht)
 	int key_index;
 	hash_node_t *iterator;
 
+	key_index = 0;
+
 	if (ht != NULL)
 	{
 		putchar('{');
@@ -27,11 +29,8 @@ void hash_table_print(const hash_table_t *ht)
 
 			if (iterator != NULL)
 			{
-				key_index = 0;
-
 				while (iterator != NULL)
 				{
-
 					if (key_index != 0)
 					{
 						printf(", ");
