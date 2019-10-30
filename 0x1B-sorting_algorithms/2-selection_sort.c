@@ -15,7 +15,7 @@ void selection_sort(int *array, size_t size)
 {
 	unsigned int swap, i;
 
-	if (size > 0 && array != NULL)
+	if (size > 1 && array != NULL)
 	{
 		for (i = 0; i < size; i++)
 		{
@@ -46,11 +46,12 @@ void selection_sort(int *array, size_t size)
 int find_idx_min(int *array, int start, size_t size)
 {
 	int base, idx;
+	size_t i;
 
 	base = array[start];
 	idx = start;
 
-	for (size_t i = start + 1; i < size; i++)
+	for (i = start + 1; i < size; i++)
 	{
 		if (array[i] < base)
 		{
