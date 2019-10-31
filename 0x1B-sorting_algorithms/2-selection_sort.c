@@ -8,7 +8,7 @@
  *
  * @size: The size of the integer array.
  *
- * Return: Always nothing nothin (VOID).
+ * Return: Always nothing VOID).
  */
 
 void selection_sort(int *array, size_t size)
