@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Module with a function to compute the area of an irregular figure on a
 rectangular matrix.
 """
