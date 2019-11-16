@@ -27,7 +27,7 @@ What you should learn from this project:
 
 ### [3. make -f 3-Makefile](./3-Makefile)
 
-* Makefile that does the same as 2 with aditional operations to do cleanup of the temporary files objects and force recompilation.
+* Makefile that does the same as 2 with additional operations to do cleanup of the temporary files objects and force recompilation.
 
 ### [4. A complete Makefile](./4-Makefile)
 
