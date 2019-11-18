@@ -37,22 +37,21 @@ def island_perimeter(grid):
     if isinstance(grid, list):
         if isinstance(grid[0], list) and grid[0]:
             if len(grid[0]) > 0:
-                if check_borders(grid):
-                    size_x = len(grid[0])
-                    size_y = len(grid)
-                    for pos_y in range(1, size_y - 1):
-                        for pos_x in range(1, size_x - 1):
-                            if grid[pos_y][pos_x] == 1:
-                                up = pos_y - 1
-                                down = pos_y + 1
-                                left = pos_x - 1
-                                right = pos_x + 1
-                                if left >= 0 and grid[pos_y][left] == 0:
-                                    perimeter += 1
-                                if right <= size_x and grid[pos_y][right] == 0:
-                                    perimeter += 1
-                                if up >= 0 and grid[up][pos_x] == 0:
-                                    perimeter += 1
-                                if down <= size_y and grid[down][pos_x] == 0:
-                                    perimeter += 1
+                size_x = len(grid[0])
+                size_y = len(grid)
+                for pos_y in range(1, size_y - 1):
+                    for pos_x in range(1, size_x - 1):
+                        if grid[pos_y][pos_x] == 1:
+                            up = pos_y - 1
+                            down = pos_y + 1
+                            left = pos_x - 1
+                            right = pos_x + 1
+                            if left >= 0 and grid[pos_y][left] == 0:
+                                perimeter += 1
+                            if right <= size_x and grid[pos_y][right] == 0:
+                                perimeter += 1
+                            if up >= 0 and grid[up][pos_x] == 0:
+                                perimeter += 1
+                            if down <= size_y and grid[down][pos_x] == 0:
+                                perimeter += 1
     return perimeter
