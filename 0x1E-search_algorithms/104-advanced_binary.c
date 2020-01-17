@@ -70,7 +70,7 @@ int binary_search_driver(int *array, size_t left, size_t right, int value)
 }
 
 /**
- * binary_search -	Finds an integer inside an array
+ * advanced_binary -	Finds an integer inside an array
  *					using the binary search algorithm.
  *
  * @array: The integer array that contains the data.
