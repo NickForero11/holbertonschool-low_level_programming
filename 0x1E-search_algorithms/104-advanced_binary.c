@@ -61,7 +61,7 @@ int binary_search_driver(int *array, size_t left, size_t right, int value)
 			}
 			else
 			{
-				return(-1);
+				return (-1);
 			}
 		}
 		else if (value <= array[middle])
@@ -94,7 +94,7 @@ int advanced_binary(int *array, size_t size, int value)
 {
 	if (array != NULL && size > 0)
 	{
-		return (binary_search_driver(array, 0, size -1, value));
+		return (binary_search_driver(array, 0, size - 1, value));
 	}
 
 	return (-1);
