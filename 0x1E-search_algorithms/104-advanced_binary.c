@@ -40,33 +40,33 @@ void print_array(int *array, size_t left, size_t right)
 
 int binary_search_driver(int *array, size_t left, size_t right, int value)
 {
-	size_t middle;
-
-	middle = (left + right) / 2;
-
-	print_array(array, left, right);
-
-	if (left == right)
+	if (right >= left)
 	{
-		return (-1);
-	}
-	if (right - left == 1)
-	{
-		if (array[middle] == value)
+		size_t middle;
+
+		middle = left + ((right - left) / 2);
+		print_array(array, left, right);
+
+
+		if (right - left == 1)
 		{
-			return (middle);
+			if (array[middle] == value)
+			{
+				return (middle);
+			}
+		}
+		if (value <= array[middle])
+		{
+			return (binary_search_driver(array, left, middle, value));
+		}
+		else
+		{
+			return (binary_search_driver(array, middle + 1, right, value));
 		}
 	}
-	if (value <= array[middle])
-	{
-		return (binary_search_driver(array, left, middle, value));
-	}
-	else
-	{
-		return (binary_search_driver(array, middle + 1, right, value));
-	}
-}
 
+	return (-1);
+}
 /**
  * advanced_binary -	Finds an integer inside an array
  *					using the binary search algorithm.
