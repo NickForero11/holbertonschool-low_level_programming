@@ -40,41 +40,31 @@ void print_array(int *array, size_t left, size_t right)
 
 int binary_search_driver(int *array, size_t left, size_t right, int value)
 {
-	if (right > left)
+	size_t middle;
+
+	middle = (left + right) / 2;
+
+	print_array(array, left, right);
+
+	if (left == right)
 	{
-		size_t middle;
-
-		middle = left + ((right - left) / 2);
-
-		print_array(array, left, right);
-
-
-		if (right - left == 1)
+		return (-1);
+	}
+	if (right - left == 1)
+	{
+		if (array[middle] == value)
 		{
-			if (array[left] == value)
-			{
-				return (left);
-			}
-			else if (array[right] == value)
-			{
-				return (right);
-			}
-			else
-			{
-				return (-1);
-			}
-		}
-		else if (value <= array[middle])
-		{
-			return (binary_search_driver(array, left, middle, value));
-		}
-		else
-		{
-			return (binary_search_driver(array, middle + 1, right, value));
+			return (middle);
 		}
 	}
-
-	return (-1);
+	if (value <= array[middle])
+	{
+		return (binary_search_driver(array, left, middle, value));
+	}
+	else
+	{
+		return (binary_search_driver(array, middle + 1, right, value));
+	}
 }
 
 /**
