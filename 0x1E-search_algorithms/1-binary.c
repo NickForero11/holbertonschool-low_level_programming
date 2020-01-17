@@ -44,7 +44,7 @@ int binary_search_driver(int *array, size_t left, size_t right, int value)
 	{
 		size_t middle;
 
-		middle = left + ((right - left) / 2);
+		middle = left + ((right - left - 1) / 2);
 
 		print_array(array, left, right);
 		if (array[middle] == value)
@@ -53,7 +53,7 @@ int binary_search_driver(int *array, size_t left, size_t right, int value)
 		}
 		else if (value < array[middle])
 		{
-			return (binary_search_driver(array, left, middle - 1, value));
+			return (binary_search_driver(array, left, middle, value));
 		}
 		else
 		{
