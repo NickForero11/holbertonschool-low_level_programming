@@ -17,9 +17,9 @@ void print_array(int *array, size_t left, size_t right)
 	size_t iterator;
 
 	printf("Searching in array: ");
-	for (iterator = left; iterator < right; iterator++)
+	for (iterator = left; iterator <= right; iterator++)
 	{
-		printf("%d%s", array[iterator], iterator < right - 1 ? ", " : "\n");
+		printf("%d%s", array[iterator], iterator < right ? ", " : "\n");
 	}
 }
 
@@ -44,21 +44,29 @@ int binary_search_driver(int *array, size_t left, size_t right, int value)
 	{
 		size_t middle;
 
-		middle = left + ((right - left - 1) / 2);
+		middle = left + ((right - left) / 2);
 
 		print_array(array, left, right);
 
 
 		if (right - left == 1)
 		{
-			if (array[middle] == value)
+			if (array[left] == value)
 			{
-				return (middle);
+				return (left);
+			}
+			else if (array[right] == value)
+			{
+				return (right);
+			}
+			else
+			{
+				return(-1);
 			}
 		}
 		else if (value <= array[middle])
 		{
-			return (binary_search_driver(array, left, middle + 1, value));
+			return (binary_search_driver(array, left, middle, value));
 		}
 		else
 		{
@@ -86,7 +94,7 @@ int advanced_binary(int *array, size_t size, int value)
 {
 	if (array != NULL && size > 0)
 	{
-		return (binary_search_driver(array, 0, size, value));
+		return (binary_search_driver(array, 0, size -1, value));
 	}
 
 	return (-1);
